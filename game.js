@@ -32,7 +32,7 @@ var game = function(userGuess, random)
 
 var repeatGame = function(userGuess, random, previousGuess) 
 {
-	if (userGuess,10) === random) {
+	if (userGuess) === random) {
 		$('#win').show();
 		return;
 	} else if (Math.abs(userGuess - random) < Math.abs(previousGuess - random)) {
