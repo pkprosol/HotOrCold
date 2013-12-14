@@ -2,14 +2,15 @@ $(document).ready(function() {
 	$('.messages').hide();
 });
 
-//	$('#submit').click(function() {
-//		var userGuess = $('#userGuessInput').val();
-//		var random = Math.floor(Math.random()*100);
-//		game(parseInt(userGuess,10), random);
-//	});
+
+/*	$('#submit').click(function() {
+		var userGuess = $('#userGuessInput').val();
+		var random = Math.floor(Math.random()*100);
+		game(parseInt(userGuess,10), random);
+	});
 
 
-/*var game = function(userGuess, random)
+var game = function(userGuess, random)
 {
 	console.log(typeof userGuess + " " + typeof random);
 	if (userGuess === random) {
@@ -26,7 +27,7 @@ $(document).ready(function() {
 	$('#submit').click(function() {
 		userGuess = $('#userGuessInput').val();
 		$('.messages').hide();
-//		repeatGame(parseInt(userGuess,10), random, previousGuess);
+		repeatGame(parseInt(userGuess,10), random, previousGuess);
 };
 
 
@@ -48,3 +49,4 @@ var repeatGame = function(userGuess, random, previousGuess)
 	repeatGame(parseInt(userGuess,10), random, previousGuess);
 };
 
+*/
