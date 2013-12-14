@@ -1,7 +1,6 @@
-$(document).ready(function () {
+$(document).ready(function() {
 	$('.messages').hide();
-
-})
+});
 
 //	$('#submit').click(function() {
 //		var userGuess = $('#userGuessInput').val();
