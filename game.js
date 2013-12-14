@@ -26,6 +26,7 @@ var game = function(userGuess, random)
 		userGuess = $('#userGuessInput').val();
 		$('.messages').hide();
 		repeatGame(parseInt(userGuess,10), random, previousGuess);
+	});
 };
 
 
