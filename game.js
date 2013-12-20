@@ -4,50 +4,44 @@ $(document).ready(function() {
 	$('#submit').click(function() {
 		var userGuess = $('#userGuessInput').val();
 		var random = Math.floor(Math.random()*100);
-		game(parseInt(userGuess,10), random);
+		console.log("Original");
+		game(parseInt(userGuess,10), random, "");
 	});
+});
 
 
-var game = function(userGuess, random)
+
+var game = function(userGuess, random, previousGuess)
 {
-	console.log(typeof userGuess + " " + typeof random);
+	console.log(userGuess);
+	console.log(isNaN(previousGuess));
+
 	if (userGuess === random) {
-		$('#win').show();
+		$('#win').show();	
 		return;
-	} else if (Math.abs(userGuess - random) < 30) {
-		$('#hot').show();
-	} else {
-		$('#cold').show();
-	}
-	$('#userGuessInput').val("");
-	var previousGuess = userGuess;
-	
-	$('#submit').click(function() {
-		userGuess = $('#userGuessInput').val();
-		$('.messages').hide();
-		repeatGame(parseInt(userGuess,10), random, previousGuess);
-	});
-};
-
-
-var repeatGame = function(userGuess, random, previousGuess) 
-{
-	if (userGuess) === random) {
-		$('#win').show();
-		return;
+	} else if (isNaN(previousGuess)) {
+		if (Math.abs(userGuess - random) < 30) {
+			$('#hot').show();
+		} else {
+			$('#cold').show();
+		}
 	} else if (Math.abs(userGuess - random) < Math.abs(previousGuess - random)) {
 		$('#hotter').show();
 	} else if (Math.abs(userGuess - random) === Math.abs(previousGuess - random)) {
 		$('#same distance').show();
 	} else {
 		$('#colder').show();
-	}
+	} 
+
+	console.log(userGuess + " " + random);
+
 	var previousGuess = userGuess;
 	$('.messages').hide();
-	userGuess = $('#userGuessInput').val();
-	repeatGame(parseInt(userGuess,10), random, previousGuess);
+
+	$('#submit').click(function() {	
+		userGuess = $('#userGuessInput').val();
+		game(parseInt(userGuess,10), random, previousGuess);
+	});
 };
 
-*/
-});
 
