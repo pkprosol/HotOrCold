@@ -1,3 +1,5 @@
+var gameCallNumber = 0;
+
 $(document).ready(function() {
 	$('.messages').hide();
 
@@ -5,7 +7,7 @@ $(document).ready(function() {
 		var userGuess = $('#userGuessInput').val();
 		var random = Math.floor(Math.random()*100);
 		console.log("Original submit works");
-		game(parseInt(userGuess,10), random, "", 1);
+		game(parseInt(userGuess,10), random, "", gameCallNumber);
 	});
 });
 
@@ -13,15 +15,19 @@ $(document).ready(function() {
 
 var game = function(userGuess, random, previousGuess, gameCallNumber)
 {
+	console.log("Typeof GameCallNumber: " + typeof gameCallNumber)
+	gameCallNumber = gameCallNumber + 1;
+
 	console.log("This is call to game function number: " + gameCallNumber);
 	console.log("Current User Guess is: " + userGuess);
 	console.log("Previous Guess = " + previousGuess);
-	console.log("Previous guess is type " + typeof previousGuess);	
+	console.log("Previous guess is type " + typeof previousGuess);
+	console.log("IsNaN(previousGuess) = " + isNaN(previousGuess));	
 
 	if (userGuess === random) {
 		$('#win').show();	
 		return;
-	} else if (isNaN(previousGuess)) {
+	} else if (previousGuess === "") {
 		if (Math.abs(userGuess - random) < 30) {
 			$('#hot').show();
 		} else {
@@ -38,12 +44,6 @@ var game = function(userGuess, random, previousGuess, gameCallNumber)
 	console.log("Now user guess is: " + userGuess + " and random = " + random);
 
 	var previousGuess = userGuess;
-
-	$('#submit').click(function() {	
-		$('.messages').hide();
-		userGuess = $('#userGuessInput').val();
-		game(parseInt(userGuess,10), random, parseInt(previousGuess,10), gameCallNumber++);
-	});
 };
 
 
