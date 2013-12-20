@@ -4,7 +4,7 @@ $(document).ready(function() {
 	$('#submit').click(function() {
 		var userGuess = $('#userGuessInput').val();
 		var random = Math.floor(Math.random()*100);
-		console.log("Original");
+		console.log("Original submit works");
 		game(parseInt(userGuess,10), random, "");
 	});
 });
