@@ -6,22 +6,34 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="game.js" type="text/javascript"></script>
 
+	<link rel='stylesheet' type='text/css' href='main.css'>
+
 </head>
 
 <body>
 
-	<h1>Hot or Cold Game!</h1>
-	<p>Pick a number between 0-99</p>
+	<div id="gameScreen">
+		<h1>Hot or Cold Game!</h1>
 
-	<input type="number" name="userGuessInput" id="userGuessInput">
-	<input type="submit" name="submit" id="submit">
+		<button type="button" name="New Game" id="NewGame">New Game</button>
+		<button type="button" name="Get Total Score" id="TotalScore">Get Total Score</button>
+		<p>Each win is 1 million points! <br>Play as many times as you want.</p>
 
-	<div class="messages" id="win">You win!</div>
-	<div class="messages" id="hot">Hot</div>
-	<div class="messages" id="cold">Cold</div>
-	<div class="messages" id="hotter">Hotter</div>
-	<div class="messages" id="colder">Colder</div>
-	<div class="messages" id="same distance">Same distance</div>
+		<p>Pick a number between 1-100</p>
+
+		<input type="number" name="userGuessInput" id="userGuessInput">
+		<input type="submit" name="submit" id="submit">
+
+		<div class="messages" id="win">You win!</div>
+		<div class="messages" id="hot">Hot</div>
+		<div class="messages" id="cold">Cold</div>
+		<div class="messages" id="hotter">Hotter</div>
+		<div class="messages" id="colder">Colder</div>
+		<div class="messages" id="same_distance">Same distance</div>
+		<div id='notice'></div>
+		<div id='tracking'></div>
+
+	</div>
 
 </body>
 
